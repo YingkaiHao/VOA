@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbfinal.mapper.CardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dbfinal.entity.Card">
+        <id column="card_id" property="cardId" />
+        <result column="cname" property="cname" />
+        <result column="cnumber" property="cnumber" />
+        <result column="edate" property="edate" />
+        <result column="cvv" property="cvv" />
+        <result column="card_type" property="cardType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        card_id, cname, cnumber, edate, cvv, card_type
+    </sql>
+
+</mapper>

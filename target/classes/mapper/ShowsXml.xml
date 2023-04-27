@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbfinal.mapper.ShowsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dbfinal.entity.Shows">
+        <id column="s_id" property="sId" />
+        <result column="name" property="name" />
+        <result column="des" property="des" />
+        <result column="stype" property="stype" />
+        <result column="wheel" property="wheel" />
+        <result column="price" property="price" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        s_id, name, des, stype, wheel, price
+    </sql>
+
+</mapper>

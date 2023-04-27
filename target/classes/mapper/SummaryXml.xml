@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbfinal.mapper.SummaryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dbfinal.entity.Summary">
+        <id column="summary_id" property="summaryId" />
+        <result column="v_id" property="vId" />
+        <result column="v_date" property="vDate" />
+        <result column="amount" property="amount" />
+        <result column="sce" property="sce" />
+        <result column="s_id" property="sId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        summary_id, v_id, v_date, amount, sce, s_id
+    </sql>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dbfinal.mapper.TicketsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dbfinal.entity.Tickets">
+        <id column="t_id" property="tId" />
+        <result column="method" property="method" />
+        <result column="pdate" property="pdate" />
+        <result column="vdate" property="vdate" />
+        <result column="ttype" property="ttype" />
+        <result column="price" property="price" />
+        <result column="whornot" property="whornot" />
+        <result column="discount" property="discount" />
+        <result column="v_id" property="vId" />
+        <result column="o_id" property="oId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        t_id, method, pdate, vdate, ttype, price, whornot, discount, v_id, o_id
+    </sql>
+
+</mapper>
