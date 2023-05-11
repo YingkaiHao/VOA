@@ -1,5 +1,7 @@
 package com.dbfinal.service;
 
+import com.dbfinal.VO.ParkingVO;
+import com.dbfinal.entity.Orders;
 import com.dbfinal.entity.Parking;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ParkingService extends IService<Parking> {
 
+    Orders buyParking(ParkingVO parkingVO);
 }

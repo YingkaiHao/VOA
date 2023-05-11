@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author Yingkai Hao
- * @since 2023-04-27 02:44:50
+ * @since 2023-05-02 04:22:32
  */
 @Mapper
 public interface VisitorsMapper extends BaseMapper<Visitors> {

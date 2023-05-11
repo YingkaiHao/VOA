@@ -15,11 +15,13 @@
         <result column="phone" property="phone" />
         <result column="bdate" property="bdate" />
         <result column="v_type" property="vType" />
+        <result column="password" property="password" />
+        <result column="is_employee" property="isEmployee" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        v_id, fname, lname, street, city, state, country, email, phone, bdate, v_type
+        v_id, fname, lname, street, city, state, country, email, phone, bdate, v_type, password, is_employee
     </sql>
 
 </mapper>

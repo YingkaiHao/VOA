@@ -1,7 +1,9 @@
 package com.dbfinal.service;
 
+import com.dbfinal.VO.ItemVO;
 import com.dbfinal.entity.Items;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dbfinal.entity.Orders;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ItemsService extends IService<Items> {
 
+    Orders buyStoreItem(ItemVO itemVO);
 }
