@@ -1,5 +1,8 @@
 package com.dbfinal.service;
 
+import com.dbfinal.VO.TicketsVO;
+import com.dbfinal.common.Result;
+import com.dbfinal.entity.Orders;
 import com.dbfinal.entity.Tickets;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TicketsService extends IService<Tickets> {
 
+    Orders buyTickets(TicketsVO ticketsVO);
+
+    Result getTicketById(Long visitorId);
 }

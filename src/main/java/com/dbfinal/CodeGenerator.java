@@ -34,8 +34,9 @@ public class CodeGenerator {
         String password="haoyingkai0329";
 
         //数据库表的设置
-        List<String> listTable = Arrays.asList("attractions", "card", "int_ord_itm", "int_ord_sho", "int_tic_atr",
-                "items", "orders", "parking", "payments", "show_time", "shows", "stores", "summary", "tickets", "visitors");  //设置需要自动代码生成的表名
+        List<String> listTable = Arrays.asList("visitors");  //设置需要自动代码生成的表名
+//        "attractions", "card", "int_ord_itm", "int_ord_sho", "int_tic_atr",
+//                "items", "orders", "parking", "payments", "show_time", "shows", "stores", "summary", "tickets", "visitors"
 //        List<String> listTableSuffix = Arrays.asList("_b");    //设置 过滤 表的后缀
 //        List<String> listTablePrefix = Arrays.asList("t_","c_"); //设置 过滤 表的后缀
 
@@ -81,6 +82,7 @@ public class CodeGenerator {
 
                             //4.1、实体类策略配置
                             .entityBuilder()
+                            .enableFileOverride()
                             .enableChainModel() //开启链式模型
                             //.disableSerialVersionUID()  //默认是开启实体类序列化，可以手动disable使它不序列化。由于项目中需要使用序列化就按照默认开启了
                             .enableTableFieldAnnotation()       // 开启生成实体时生成字段注解
@@ -99,17 +101,20 @@ public class CodeGenerator {
 
                             //4.2、Controller策略配置
                             .controllerBuilder()
+                            .enableFileOverride()
                             .enableHyphenStyle()    //开启驼峰连转字符
                             .formatFileName("%sController") //格式化 Controller 类文件名称，%s进行匹配表名，如 UserController
                             .enableRestStyle()  //开启生成 @RestController 控制器
 
                             //4.3、service 策略配置
                             .serviceBuilder()
+                            .enableFileOverride()
                             .formatServiceFileName("%sService") //格式化 service 接口文件名称，%s进行匹配表名，如 UserService
                             .formatServiceImplFileName("%sServiceImpl") //格式化 service 实现类文件名称，%s进行匹配表名，如 UserServiceImpl
 
                             //4.4、Mapper策略配置
                             .mapperBuilder()
+                            .enableFileOverride()
                             .superClass(BaseMapper.class)   //设置父类
                             .enableBaseResultMap()  //启用 BaseResultMap 生成
                             .enableBaseColumnList() //启用 BaseColumnList

@@ -1,10 +1,13 @@
 package com.dbfinal.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.dbfinal.common.Result;
+import com.dbfinal.entity.Attractions;
 import com.dbfinal.service.AttractionsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -26,4 +29,17 @@ public class AttractionsController {
         return attractionsService.getById(1L);
     }
 
+    @GetMapping("/all")
+    public Result getSelectedAttractions(Integer curPage) {
+        Page page = new Page(curPage, 5);
+
+        IPage ip = attractionsService.page(page, new QueryWrapper<Attractions>());
+
+        return Result.success(ip);
+    }
+
+    @PostMapping("/getvisitorTickets")
+    public Result getVisitorTickets(@RequestBody Integer curVisitor) {
+        return Result.success(null);
+    }
 }

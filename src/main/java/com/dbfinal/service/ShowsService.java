@@ -1,7 +1,13 @@
 package com.dbfinal.service;
 
+import com.dbfinal.VO.ShowsVO;
+import com.dbfinal.common.Result;
+import com.dbfinal.entity.Orders;
 import com.dbfinal.entity.Shows;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +19,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ShowsService extends IService<Shows> {
 
+    Result getShowByDate(Date date);
+
+    List<Shows> getAllShows();
+
+    Orders buyShows(ShowsVO showsVO);
 }

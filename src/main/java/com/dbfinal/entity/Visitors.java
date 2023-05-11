@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author Yingkai Hao
- * @since 2023-04-27 02:44:50
+ * @since 2023-05-02 04:22:32
  */
 @Getter
 @Setter
@@ -72,4 +72,11 @@ public class Visitors implements Serializable {
     @ApiModelProperty("VISITOR TYPE")
     @TableField("v_type")
     private String vType;
+
+    @TableField("password")
+    private String password;
+
+    @ApiModelProperty("check whether this is an employee")
+    @TableField("is_employee")
+    private Boolean isEmployee;
 }
